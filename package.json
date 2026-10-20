@@ -1,0 +1,20 @@
+{
+  "name": "cron-pinger",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted cron pinger with a web GUI + analytics. POSTs a target URL on a schedule (e.g. TalkEZY /api/automations/cron every minute).",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "node-cron": "3.0.3"
+  },
+  "packageManager": "pnpm@9.12.3"
+}
