@@ -23,6 +23,7 @@
 import express from "express";
 import cron from "node-cron";
 import crypto from "node:crypto";
+import { Buffer } from "node:buffer";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -153,7 +154,7 @@ function authed(req) {
   if (!GUI_TOKEN) return true;
   const header = (req.headers.authorization ?? "").replace(/^Bearer\s+/i, "");
   const got = (req.query.token ?? header ?? "").toString();
-  const a = `Buffer`.from(got);
+  const a = Buffer.from(got);
   const b = Buffer.from(GUI_TOKEN);
   return a.length === b.length && crypto.timingSafeEqual(a, b);
 }
